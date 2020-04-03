@@ -8,8 +8,8 @@ function Role(props) {
     useEffect(()=>{
         dispatch(getListRoleStart());
     },[])
-    const dataRole = useSelector(state => state.redux.app.resource.dataRole ||[])
-    console.log(dataRole);
+    const dataRole = useSelector(state => state.redux.app.resource.dataRole )
+    // console.log(dataRole);
     return (
         <div>
             <div className="overflow-top-table">

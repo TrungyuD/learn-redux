@@ -6,8 +6,8 @@ import {watchAuth} from './authority';
 export default function* rootSaga() {
     try {
         yield all([
-            watchUser(),
             watchRole(),
+            watchUser(),
             watchAuth()
         ]);
     } catch (err) {

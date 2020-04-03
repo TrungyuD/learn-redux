@@ -29,6 +29,24 @@ const user = (state = redux,action)=>{
                 state.app.resource.dataUser = action.dataUser;
                 return state;
             }
+        case 'GET_LIST_ROLE_START':
+            {
+                return state;
+            }
+        case 'GET_LIST_ROLE_SUCCESS':
+            {
+                state.app.resource.dataRole = action.dataRole;
+                return state;
+            }
+        case 'GET_LIST_AUTH_START':
+            {
+                return state;
+            }
+        case 'GET_LIST_AUTH_SUCCESS':
+            {
+                state.app.resource.dataAuth = action.dataAuth;
+                return state;
+            }
         case 'GET_USER':
             {
                 state.user.username = localStorage.getItem('username');

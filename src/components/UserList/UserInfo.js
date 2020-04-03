@@ -5,16 +5,12 @@ import './User.css';
 import {useSelector,useDispatch} from 'react-redux'
 function UserInfo(props) {
     const [user, setUser] = useState([]);
-    // id
     const userData = useSelector(state => state.redux.app.resource.dataUser);
-    // const userSelected = userInfo.filter(user => user.id === id);
     useEffect(()=>{
-        // const userInfo = localStorage.getItem('user-info');
         console.log(props.match.params.id);
         console.log(userData);
         const id = props.match.params.id;
-        const userInfo=userData.filter(user => user.id === id);
-        // const userInfo = 
+        const userInfo=userData.filter(user => user.id == id);
         console.log(userInfo[0]);
         setUser(userInfo[0]);
     },[]);

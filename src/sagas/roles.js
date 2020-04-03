@@ -10,7 +10,7 @@ export function* getRoleListSaga() {
         headers.append('Authorization', getTokenType +' '+ getAccessToken);
         const response = yield call(fetch, url, { headers });
         const data = yield response.json();
-        console.log(data.body);
+        // console.log(data.body);
         yield put(getListRoleSuccess(data.body));
     } catch (error) {
         console.log(error);
