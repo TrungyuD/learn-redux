@@ -10,8 +10,8 @@ function Edit(props) {
     const [role, setRole] = useState([]);
     const [roleId, setRoleId] =useState(["modality_resource_manager"]);
     const [roleName, setRoleName] =useState('');
-    const userData = useSelector(state => state.redux.app.resourse.dataUser);
-    const dataRole = useSelector(state => state.redux.app.resourse.dataRole);
+    const userData = useSelector(state => state.redux.app.resource.dataUser);
+    const dataRole = useSelector(state => state.redux.app.resource.dataRole);
     useEffect(()=>{
         const id = props.match.params.id;
         const userInfo=userData.filter(user => user.id == id);

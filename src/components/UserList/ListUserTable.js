@@ -3,29 +3,14 @@ import {Table} from 'react-bootstrap';
 import {withRouter} from 'react-router-dom';
 import {useSelector,useDispatch} from 'react-redux'
 // import { useDispatch} from 'react-redux';
-import {getListUer, getUserInfo} from '../../actions';
+import {getListUer, getUserInfo, getListUerStart} from '../../actions';
 // import { browserHistory } from 'react-router';
 function ListUserTable(props) {
-    // const CircularJSON = require('circular-json');
-    const [dataUserInfo, setUserInfo] = useState([]);
-    const getTokenType = useSelector(state => state.redux.user.token_type);
-    const getAccessToken = useSelector(state => state.redux.user.access_token);
+    const dataUserInfo = useSelector(state=> state.redux.app.resource.dataUser ||[]);
+    // neu trong store khong co can check va get lai
     const dispatch = useDispatch();
     useEffect(()=>{
-        // const getTokenType = localStorage.getItem('token_type');
-        // const getAccessToken = localStorage.getItem('access_token');
-        const url = 'http://test.itechcorp.com.vn:38765/auth/secured/ws/rest/v1/user';
-        let headers = new Headers();
-        headers.append('Authorization', getTokenType +' '+ getAccessToken);
-        fetch(url, { method: 'GET', headers:headers})
-        .then(res => {
-            return res.json().then((data)=>{
-                dispatch(getListUer(data.body));
-                // console.log(data.body);
-                
-                setUserInfo(data.body);
-            })
-        })
+        dispatch(getListUerStart());
         // debugger;
     },[])
     console.log(dataUserInfo);

@@ -6,7 +6,7 @@ import {useSelector,useDispatch} from 'react-redux'
 function UserInfo(props) {
     const [user, setUser] = useState([]);
     // id
-    const userData = useSelector(state => state.redux.app.resourse.dataUser);
+    const userData = useSelector(state => state.redux.app.resource.dataUser);
     // const userSelected = userInfo.filter(user => user.id === id);
     useEffect(()=>{
         // const userInfo = localStorage.getItem('user-info');

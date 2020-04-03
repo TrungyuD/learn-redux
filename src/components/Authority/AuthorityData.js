@@ -4,7 +4,7 @@ import {useSelector, useDispatch} from 'react-redux';
 
 function AuthorityData(props) {
         const [auth, setAuth] = useState({});
-        const userAuth = useSelector(state => state.redux.app.resourse.dataAuth);
+        const userAuth = useSelector(state => state.redux.app.resource.dataAuth);
         useEffect(()=>{
             // const userInfo = localStorage.getItem('user-info');
             console.log(props.match.params.id);

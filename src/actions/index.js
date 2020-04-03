@@ -6,6 +6,23 @@ export const getUser = (username, access_token, token_type) => {
         token_type
     }
 }
+
+//demo for saga
+export const getListUerStart = action => {
+    return {
+        type: "GET_LIST_USER_START",
+        action
+    }
+}
+
+export const getListUerSuccess = dataUser => {
+    return {
+        type: "GET_LIST_USER_SUCCESS",
+        dataUser
+    }
+}
+
+
 export const getListUer = dataUser => {
     return {
         type: "GET_LIST_USER",

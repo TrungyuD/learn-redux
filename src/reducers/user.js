@@ -1,15 +1,15 @@
-// const access_token = localStorage.getItem('access_token');
-// const token_type =  localStorage.getItem('token_type');
-// const username=  localStorage.getItem('username');
+const access_token = localStorage.getItem('access_token');
+const token_type =  localStorage.getItem('token_type');
+const username =  localStorage.getItem('username');
 var redux = {
         user : {
-            username :'',
-            access_token : '',
-            token_type : ''
+            username : username,
+            access_token : access_token,
+            token_type : token_type
         },
         app :{
-            resourse: {
-                dataUser: {},
+            resource: {
+                dataUser: [],
                 dataRole: {},
                 dataAuth: {},
             },
@@ -20,6 +20,15 @@ var redux = {
 const user = (state = redux,action)=>{
          
     switch(action.type){
+        case 'GET_LIST_USER_START':
+                {
+                    return state;
+                }
+        case 'GET_LIST_USER_SUCCESS':
+            {
+                state.app.resource.dataUser = action.dataUser;
+                return state;
+            }
         case 'GET_USER':
             {
                 state.user.username = localStorage.getItem('username');
@@ -30,17 +39,17 @@ const user = (state = redux,action)=>{
             
         case 'GET_LIST_USER':
             {
-                state.app.resourse.dataUser = action.dataUser;
+                state.app.resource.dataUser = action.dataUser;
                 return state;
             }
         case 'GET_LIST_ROLE':
             {
-                state.app.resourse.dataRole = action.dataRole;
+                state.app.resource.dataRole = action.dataRole;
                 return state;
             }
         case 'GET_LIST_AUTH':
             {
-                state.app.resourse.dataAuth = action.dataAuth;
+                state.app.resource.dataAuth = action.dataAuth;
                 return state;
             }
         default: return state;

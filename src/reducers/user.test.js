@@ -10,7 +10,7 @@ describe('user reducer test', ()=>{
                 token_type : ''
             },
             app :{
-                resourse: {
+                resource: {
                     dataUser: {},
                     dataRole: {},
                     dataAuth: {},
@@ -27,7 +27,7 @@ describe('user reducer test', ()=>{
                 token_type : ''
             },
             app :{
-                resourse: {
+                resource: {
                     dataUser: {},
                     dataRole: {},
                     dataAuth: {},
@@ -43,7 +43,7 @@ describe('user reducer test', ()=>{
                 token_type : localStorage.getItem('token_type')
             },
             app :{
-                resourse: {
+                resource: {
                     dataUser: {},
                     dataRole: {},
                     dataAuth: {},
@@ -60,7 +60,7 @@ describe('user reducer test', ()=>{
             token_type : ''
         },
         app :{
-            resourse: {
+            resource: {
                 dataUser: {},
                 dataRole: {},
                 dataAuth: {},
@@ -79,7 +79,7 @@ describe('user reducer test', ()=>{
                 token_type : ''
             },
             app:{
-                resourse: {
+                resource: {
                     dataUser: {
                         name: 'Duy',
                         name: 'Trung'
@@ -99,7 +99,7 @@ describe('user reducer test', ()=>{
             token_type : ''
         },
         app :{
-            resourse: {
+            resource: {
                 dataUser: {},
                 dataRole: {},
                 dataAuth: {},
@@ -117,7 +117,7 @@ describe('user reducer test', ()=>{
                 token_type : ''
             },
             app:{
-                resourse: {
+                resource: {
                     dataUser: {},
                     dataRole: {
                         id: 'system_admin'
@@ -136,7 +136,7 @@ describe('user reducer test', ()=>{
             token_type : ''
         },
         app :{
-            resourse: {
+            resource: {
                 dataUser: {},
                 dataRole: {},
                 dataAuth: {},
@@ -154,7 +154,7 @@ describe('user reducer test', ()=>{
                 token_type : ''
             },
             app:{
-                resourse: {
+                resource: {
                     dataUser: {},
                     dataRole: {},
                     dataAuth: {

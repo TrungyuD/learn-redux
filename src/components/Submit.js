@@ -5,7 +5,7 @@ import { useDispatch} from 'react-redux';
 import {getUser} from '../actions';
 function Submit(props) {
     const [inputValues, setInputValues] = useState({
-      uname: '', psw: ''
+      uname: 'trungDuy1999', psw: 'trungDuy1999'
     });
     const handleChange = event => {
       const { name, value } = event.target;

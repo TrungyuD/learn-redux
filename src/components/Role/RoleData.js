@@ -3,7 +3,7 @@ import {Button, Table} from 'react-bootstrap';
 import {useSelector, useDispatch} from 'react-redux';
 function RoleData(props) {
         const [role, setRole] = useState({});
-        const userRole = useSelector(state => state.redux.app.resourse.dataRole);
+        const userRole = useSelector(state => state.redux.app.resource.dataRole);
         useEffect(()=>{
             // const userInfo = localStorage.getItem('user-info');
             console.log(props.match.params.id);

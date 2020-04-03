@@ -5,15 +5,24 @@ import './index.css';
 // import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './serviceWorker';
-import {createStore} from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import {createStore, applyMiddleware, compose } from 'redux';
 import allReducer from './reducers';
+import rootSaga from './sagas';
 import Root from './Root'
+
+const sagaMiddleware = createSagaMiddleware();
+
+const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
+
 const store = createStore(
     allReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()
+    composeEnhancers(applyMiddleware(sagaMiddleware))
     );
     console.log(store.getState());
-    
+
+sagaMiddleware.run(rootSaga);
+
 ReactDOM.render((
     <Root store={store} />
 ),document.getElementById('root'));

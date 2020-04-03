@@ -11,7 +11,7 @@ function Create() {
         console.log(event.target.value);
         setRoleId([event.target.value]);
     }
-    const dataRole = useSelector(state => state.redux.app.resourse.dataRole);
+    const dataRole = useSelector(state => state.redux.app.resource.dataRole);
     useEffect(()=>{
         const role = dataRole;
         setRole(role);
