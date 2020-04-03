@@ -13,7 +13,7 @@ function UserInfo(props) {
         console.log(props.match.params.id);
         console.log(userData);
         const id = props.match.params.id;
-        const userInfo=userData.filter(user => user.id == id);
+        const userInfo=userData.filter(user => user.id === id);
         // const userInfo = 
         console.log(userInfo[0]);
         setUser(userInfo[0]);

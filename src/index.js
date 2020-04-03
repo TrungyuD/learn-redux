@@ -22,7 +22,7 @@ const store = createStore(
     console.log(store.getState());
 
 sagaMiddleware.run(rootSaga);
-
+// sagaMiddleware.run(rootSaga2);
 ReactDOM.render((
     <Root store={store} />
 ),document.getElementById('root'));

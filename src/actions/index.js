@@ -22,7 +22,37 @@ export const getListUerSuccess = dataUser => {
     }
 }
 
+//get list role for saga 
+export const getListRoleStart = action => {
+    return {
+        type: "GET_LIST_ROLE_START",
+        action
+    }
+}
 
+export const getListRoleSuccess = dataRole => {
+    return {
+        type: "GET_LIST_ROLE_SUCCESS",
+        dataRole
+    }
+}
+//get list auth for saga
+export const getListAuthStart = action => {
+    return {
+        type: "GET_LIST_AUTH_START",
+        action
+    }
+}
+
+export const getListAuthSuccess = dataAuth => {
+    return {
+        type: "GET_LIST_AUTH_SUCCESS",
+        dataAuth
+    }
+}
+
+
+///
 export const getListUer = dataUser => {
     return {
         type: "GET_LIST_USER",

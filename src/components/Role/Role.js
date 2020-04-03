@@ -1,26 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import {Table} from 'react-bootstrap';
 import {useSelector, useDispatch} from 'react-redux'
-import {getListRole} from '../../actions';
+import {getListRoleStart} from '../../actions';
 function Role(props) {
-    const [dataRole, setDataRole] = useState([]);
-    const getTokenType = useSelector(state => state.redux.user.token_type);
-    const getAccessToken = useSelector(state => state.redux.user.access_token);
+    
     const dispatch = useDispatch();
     useEffect(()=>{
-        const url = 'http://test.itechcorp.com.vn:38765/auth/secured/ws/rest/v1/role';
-        let headers = new Headers();
-        headers.append('Authorization', getTokenType +' '+ getAccessToken);
-        fetch(url, { method: 'GET', headers:headers})
-        .then(res => {
-            return res.json().then((data)=>{
-                // localStorage.setItem('role',JSON.stringify(data.body));  
-                dispatch(getListRole(data.body));
-                setDataRole(data.body);
-                return
-            })
-        })
+        dispatch(getListRoleStart());
     },[])
+    const dataRole = useSelector(state => state.redux.app.resource.dataRole ||[])
+    console.log(dataRole);
     return (
         <div>
             <div className="overflow-top-table">

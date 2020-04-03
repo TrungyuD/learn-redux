@@ -1,39 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import {Table} from 'react-bootstrap';
 import {useSelector, useDispatch} from 'react-redux'
-import {getListAuth} from '../../actions';
+import {getListAuthStart} from '../../actions';
 function Authority(props) {
-    const [dataAuthority, setData] = useState([]);
-    const getTokenType = useSelector(state => state.redux.user.token_type);
-    const getAccessToken = useSelector(state => state.redux.user.access_token);
+    const dataAuthority = useSelector(state => state.redux.app.resource.dataAuth ||[])
     const dispatch = useDispatch();
     const listAuth = useSelector(state => state.dataAuth);
     useEffect(()=>{
-        const getTokenType = localStorage.getItem('token_type');
-        const getAccessToken = localStorage.getItem('access_token');
-        const url = 'http://test.itechcorp.com.vn:38765/auth/secured/ws/rest/v1/authority';
-        let headers = new Headers();
-        headers.append('Authorization', getTokenType +' '+ getAccessToken);
-        fetch(url, { method: 'GET', headers:headers})
-        .then(res => {
-            return res.json().then((data)=>{
-                dispatch(getListAuth(data.body));
-                setData(data.body);
-                return
-            })
-        })
+                dispatch(getListAuthStart());
     }, [])
-    // const getData = () => {
-    //     return dataAuthority.map((value,key)=>
-    //         {
-    //             return <tr className="" key={key} >
-    //                 <td>{value.id}</td>
-    //                 <td>{value.uuid}</td>
-    //                 <td>{value.description}</td> 
-    //                 </tr>
-    //         }
-    //     );
-    // }
     return (
         <div>
             <div className="overflow-top-table">

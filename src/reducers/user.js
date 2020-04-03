@@ -10,8 +10,8 @@ var redux = {
         app :{
             resource: {
                 dataUser: [],
-                dataRole: {},
-                dataAuth: {},
+                dataRole: [],
+                dataAuth: [],
             },
             locale: 'vn'
         }
